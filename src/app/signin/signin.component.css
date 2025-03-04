@@ -1,0 +1,103 @@
+/* Background Image */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://media.istockphoto.com/id/1409923436/photo/shopping-cart-with-different-food-products.jpg?s=612x612&w=0&k=20&c=dTPtdW4OG6lqD8FMjp4XT5d_DywYt6nWkyaOfKTiymU=') no-repeat center center;
+  background-size: cover;
+}
+
+/* White Box */
+.auth-box {
+  background: rgba(255, 255, 255, 0.95); /* Slightly opaque */
+  padding: 40px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.highlight {
+  color: #5c67f2;
+  font-weight: bold;
+}
+
+/* Description */
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0 5px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Sign In Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5c67f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+/* Sign Up Link */
+.switch-page {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.switch-page a {
+  color: #5c67f2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-page a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .auth-box {
+    width: 90%;
+    padding: 25px;
+  }
+}

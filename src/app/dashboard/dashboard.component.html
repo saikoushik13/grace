@@ -1,0 +1,58 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  
+    <main class="content">
+      <!-- Topbar -->
+      <app-topbar></app-topbar>
+  
+      <div class="dashboard-content">
+        <h2>Hello John Doe!</h2>
+  
+        <!-- First Section: Analysis and My Daily Tasks -->
+        <div class="dashboard-section">
+          <!-- Analysis Chart -->
+          <app-chart chartTitle="Analysis" jsonUrl="assets/stockinventory.json"></app-chart>
+  
+          <!-- My Daily Tasks -->
+          <div class="daily-tasks-container">
+            <div class="shipment-stats-header">
+              <h3>My Daily Tasks</h3>
+              <!-- Filter Button -->
+              <button mat-button [matMenuTriggerFor]="taskFilterMenu">Filter</button>
+              <mat-menu #taskFilterMenu="matMenu">
+                <button mat-menu-item (click)="changeTaskFilter('Online')">Online</button>
+                <button mat-menu-item (click)="changeTaskFilter('Offline')">Offline</button>
+              </mat-menu>
+            </div>
+  
+            <!-- Show Only One Pie Chart Based on Filter -->
+            <app-pie-chart 
+              chartTitle="Tasks" 
+              filterKey="connection" 
+              [filterValue]="selectedTaskFilter">
+            </app-pie-chart>
+          </div>
+        </div>
+  
+        <!-- Second Section: Shipment Statistics -->
+        <!-- Second Section: Shipment Statistics -->
+<div class="dashboard-section">
+    <div class="shipment-stats-container">
+      <div class="shipment-stats-header">
+        <h3>Shipment Statistics</h3>
+        <a href="#">View All</a> 
+      </div>
+      
+      <!-- Shipment Statistics Pie Chart -->
+      <app-pie-chart 
+        chartTitle="Shipment Statistics" 
+        filterKey="status" 
+        filterValue="completed">
+      </app-pie-chart>
+    </div>
+  </div>  
+      </div>
+    </main>
+  </div>
+  

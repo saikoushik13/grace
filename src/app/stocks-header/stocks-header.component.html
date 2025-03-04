@@ -1,0 +1,28 @@
+<div class="stocks-header">
+    <!-- Tabs -->
+    <div class="tabs">
+        <span 
+            [class.active]="activeTab === 'Stocks Overview'" 
+            (click)="setActiveTab('Stocks Overview')">
+            Stocks Overview
+        </span>
+        <span 
+            [class.active]="activeTab === 'High-Demand Orders'" 
+            (click)="setActiveTab('High-Demand Orders')">
+            High-Demand Orders
+        </span>
+        <span 
+            [class.disabled]="true">
+            Returns & Defects
+        </span>
+        <span 
+            [class.disabled]="true">
+            Out of Stock Alerts
+        </span>
+    </div>
+
+    <!-- Create New Task Button -->
+    <button mat-button class="create-task-btn">
+        <mat-icon>add</mat-icon> Create New Task
+    </button>
+</div>

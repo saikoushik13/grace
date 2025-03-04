@@ -1,0 +1,21 @@
+<div class="auth-container">
+    <div class="auth-box">
+      <h2 class="title">Welcome to the <br><span class="highlight">Grocery Store</span> <br>Management System</h2>
+      <p class="description">
+        Streamline inventory, track orders, manage suppliers, and enhance store operations—all in one place.
+      </p>
+  
+      <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <label>Username</label>
+        <input type="text" formControlName="username" placeholder="Enter username" />
+  
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Enter password" />
+  
+        <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+      </form>
+  
+      <p class="switch-page">Don’t have an account? <a routerLink="/signup">Sign Up</a></p>
+    </div>
+  </div>
+  

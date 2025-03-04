@@ -1,0 +1,49 @@
+.stocks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.tabs span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.tabs span.active {
+    color: #2e58ff;
+    border-bottom: 2px solid #2e58ff;
+}
+
+.tabs span.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Create Task Button */
+.create-task-btn {
+    background-color: #2e58ff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.create-task-btn mat-icon {
+    margin-right: 5px;
+}
