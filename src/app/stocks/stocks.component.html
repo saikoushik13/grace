@@ -1,17 +1,53 @@
 <div class="dashboard-container">
-    <!-- Sidebar -->
-    <app-sidebar></app-sidebar>
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
 
-    <main class="content">
-        <!-- Topbar -->
-        <app-topbar></app-topbar>
+  <main class="content">
+    <!-- Topbar -->
+    <app-topbar></app-topbar>
 
-        <!-- Stocks Header -->
-        <app-stocks-header></app-stocks-header>
+    <!-- 🔹 Stocks Header with Tabs -->
+    <div class="stocks-header">
+      <div class="tabs">
+        <button routerLink="/stocks" routerLinkActive="active">Stocks Overview</button>
+        <button routerLink="/high-demand-orders" routerLinkActive="active">High-Demand Orders</button>
+        <button disabled>Returns & Defects</button>
+        <button disabled>Out of Stock Alerts</button>
+      </div>
+      <button mat-button class="create-task-btn" (click)="openEditModal()">
+        <mat-icon>add</mat-icon> Create New Task
+      </button>
+    </div>
 
-        <!-- Stocks Content -->
-        <div class="stocks-content">
-        
+    <!-- 🔹 Overview Analysis Section (Balanced Layout) -->
+    <h3 class="page-title">Overview Analysis</h3>
+    <div class="overview-container">
+      <!-- Summary Section (50% Width) -->
+      <div class="summary-section">
+        <div *ngFor="let item of stockSummary" class="summary-card">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.units }} Units</p>
+          <span [ngClass]="{'positive': item.status > 0, 'negative': item.status < 0}" class="status">
+            {{ item.status | number:'1.2-2' }}%
+          </span>
         </div>
-    </main>
+      </div>
+
+      <!-- Chart Section (50% Width) -->
+      <div class="chart-container">
+        <div class="chart-content">
+          <app-chart 
+            [chartTitle]="'Stock Analysis'" 
+            [jsonPath]="'/assets/available.json'"
+            [activeFieldName]="'numOfAvailableStock'" 
+            [inactiveFieldName]="'numOfUnvailableStock'">
+          </app-chart>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 🔹 Router Outlet for High-Demand Orders -->
+    <router-outlet></router-outlet>
+  </main>
 </div>

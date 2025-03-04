@@ -12,8 +12,12 @@
         <!-- First Section: Analysis and My Daily Tasks -->
         <div class="dashboard-section">
           <!-- Analysis Chart -->
-          <app-chart chartTitle="Analysis" jsonUrl="assets/stockinventory.json"></app-chart>
-  
+          <app-chart 
+  [chartTitle]="'Order Analysis'" 
+  [jsonPath]="'/assets/active.json'"
+  [activeFieldName]="'numOfActiveOrders'" 
+  [inactiveFieldName]="'numOfInactiveOrders'">
+</app-chart>
           <!-- My Daily Tasks -->
           <div class="daily-tasks-container">
             <div class="shipment-stats-header">

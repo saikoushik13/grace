@@ -5,12 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AnalysisService {
-  private jsonUrl = 'assets/active.json'; // JSON file location
-
+export class TableService {
   constructor(private http: HttpClient) {}
 
-  getAnalysisData(): Observable<any[]> {
-    return this.http.get<any[]>(this.jsonUrl);
+  getTableData(jsonUrl: string): Observable<any[]> {
+    return this.http.get<any[]>(jsonUrl);
   }
 }

@@ -1,0 +1,38 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  
+    <main class="content">
+      <!-- Topbar -->
+      <app-topbar></app-topbar>
+  
+      <h3 class="page-title">Shipment Tracking</h3>
+  
+      <!-- Shipment Tabs -->
+      <div class="shipment-tabs">
+        <button *ngFor="let tab of shipmentTabs"
+                [class.active]="selectedTab === tab"
+                (click)="selectTab(tab)">
+          {{ tab | titlecase }}
+        </button>
+        <button class="create-task-btn">Create New Task</button>
+      </div>
+  
+      <!-- 🔹 Reusable Table Component -->
+      <app-table
+        [columns]="tableColumns"
+        [data]="pagedData"
+        [enablePagination]="true"
+        (pageChange)="goToPage($event)">
+      </app-table>
+  
+      <!-- Google Map Container -->
+      <div class="map-container" *ngIf="displayMap">
+        <google-map height="500px" width="100%" [center]="center" [zoom]="zoom">
+          <map-marker *ngIf="originMarker" [position]="originMarker" label="Origin"></map-marker>
+          <map-marker *ngIf="destinationMarker" [position]="destinationMarker" label="Destination"></map-marker>
+        </google-map>
+      </div>
+    </main>
+  </div>
+  

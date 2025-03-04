@@ -1,0 +1,42 @@
+/* 🔹 Table Styling */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+}
+
+/* 🔹 Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

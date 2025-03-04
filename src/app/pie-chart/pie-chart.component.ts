@@ -30,7 +30,6 @@ export class PieChartComponent implements OnInit {
 
   loadData() {
     this.shipmentService.getShipmentData().subscribe(response => {
-      console.log(`📊 Loaded Data for ${this.chartTitle}:`, response);
       this.data = response;
       this.updateChart();
     });
@@ -38,7 +37,6 @@ export class PieChartComponent implements OnInit {
 
   /** ✅ Add `changeFilter()` method to update the selected filter **/
   changeFilter(filter: string) {
-    console.log(`📌 Changing Pie Chart Filter to: ${filter}`);
     this.selectedFilter = filter;
     this.updateChart();
   }
@@ -54,7 +52,7 @@ export class PieChartComponent implements OnInit {
       item[this.filterKey] && item[this.filterKey].toLowerCase() === normalizedFilterValue
     );
 
-    console.log(`✅ Filtered Data for ${this.chartTitle}:`, filteredData);
+
 
     if (!filteredData.length) {
       console.warn(`⚠ No matching data for ${this.chartTitle} with ${this.filterKey} = ${this.filterValue}`);

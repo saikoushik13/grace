@@ -1,0 +1,59 @@
+/* 🔹 Ensure the main container takes full height */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* 🔹 Ensure main content expands and stacks elements correctly */
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow-y: auto; /* Allow scrolling if needed */
+  }
+  
+  /* 🔹 Fix the placement of shipment tabs */
+  .shipment-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .shipment-tabs button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .shipment-tabs button.active {
+    background-color: #3b3ad1;
+    color: #fff;
+  }
+  
+  /* 🔹 Fix Table Positioning */
+  .table-container {
+    flex-grow: 1;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 16px; /* ✅ Ensure table doesn't stick to the bottom */
+  }
+  
+  /* 🔹 Ensure Google Maps container stays in place */
+  .map-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* 🔹 Page Title Fix */
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  

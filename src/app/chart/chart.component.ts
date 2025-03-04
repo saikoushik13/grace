@@ -5,7 +5,6 @@ import { HighchartsChartModule } from 'highcharts-angular'; // Highcharts Module
 import { MatMenuModule } from '@angular/material/menu'; // Import MatMenuModule
 import { MatButtonModule } from '@angular/material/button'; // Import MatButtonModule
 import * as Highcharts from 'highcharts';
-import { AnalysisService } from '../services/analysis.service'; // Import service
 
 @Component({
   selector: 'app-chart',
@@ -21,19 +20,23 @@ import { AnalysisService } from '../services/analysis.service'; // Import servic
 })
 export class ChartComponent implements OnInit {
   @Input() chartTitle: string = 'Analysis';
+  @Input() jsonPath: string = '';// Accept JSON path as input
+  @Input() activeFieldName: string = 'numOfActiveOrders'; // Default field name for active orders
+  @Input() inactiveFieldName: string = 'numOfInactiveOrders'; // Default field name for inactive orders
+
   highcharts = Highcharts;
   chartOptions: Highcharts.Options | undefined;
   data: any[] = [];
   filterOption: string = 'last6months';
 
-  constructor(private analysisService: AnalysisService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.loadData();
   }
 
   loadData() {
-    this.analysisService.getAnalysisData().subscribe(response => {
+    this.http.get<any[]>(this.jsonPath).subscribe(response => {
       this.data = response;
       this.updateChart();
     });
@@ -69,8 +72,8 @@ export class ChartComponent implements OnInit {
       filteredData.forEach(item => {
         const dayName = dayNames[new Date(item.date).getDay()];
         if (!grouped[dayName]) grouped[dayName] = { active: 0, inactive: 0 };
-        grouped[dayName].active += item.numOfActiveOrders;
-        grouped[dayName].inactive += item.numOfInactiveOrders;
+        grouped[dayName].active += item[this.activeFieldName];
+        grouped[dayName].inactive += item[this.inactiveFieldName];
       });
 
       categories = dayNames;
@@ -84,8 +87,8 @@ export class ChartComponent implements OnInit {
       filteredData.forEach(item => {
         const day = new Date(item.date).getDate().toString();
         if (!grouped[day]) grouped[day] = { active: 0, inactive: 0 };
-        grouped[day].active += item.numOfActiveOrders;
-        grouped[day].inactive += item.numOfInactiveOrders;
+        grouped[day].active += item[this.activeFieldName];
+        grouped[day].inactive += item[this.inactiveFieldName];
       });
 
       categories = Object.keys(grouped).sort((a, b) => parseInt(a) - parseInt(b));
@@ -101,8 +104,8 @@ export class ChartComponent implements OnInit {
         const dateObj = new Date(item.date);
         const month = monthNames[dateObj.getMonth()];
         if (!grouped[month]) grouped[month] = { active: 0, inactive: 0 };
-        grouped[month].active += item.numOfActiveOrders;
-        grouped[month].inactive += item.numOfInactiveOrders;
+        grouped[month].active += item[this.activeFieldName];
+        grouped[month].inactive += item[this.inactiveFieldName];
       });
 
       categories = monthNames.filter(month => grouped[month]); // Get correct order

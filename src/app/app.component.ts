@@ -11,6 +11,6 @@ import { CommonModule } from '@angular/common';
       <router-outlet></router-outlet>
     </div>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {}

@@ -1,0 +1,12 @@
+<div class="high-demand-orders-container">
+  <h3 class="section-title">High-Demand Orders</h3>
+
+  <!-- 🔹 Reusable Table Component -->
+  <app-table 
+    [columns]="tableColumns" 
+    [data]="pagedData"
+    [enablePagination]="true"
+    [currentPage]="currentPage"
+    (pageChange)="goToPage($event)">
+  </app-table>
+</div>
