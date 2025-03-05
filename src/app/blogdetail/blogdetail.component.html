@@ -1,0 +1,48 @@
+<div *ngIf="blog" class="blog-detail-container">
+    <!-- Left: Main Blog Content -->
+    <div class="blog-detail-main">
+      <h2>Food Safety News</h2>
+  
+      <!-- Blog Title & Date -->
+      <div class="blog-header">
+        <div class="blog-date">
+          {{ blog.publishedDate | date:'dd/MM/yyyy' }}
+        </div>
+        <h1>{{ blog.title }}</h1>
+        <p class="posted-by">Posted by {{ blog.blogInfo.postBy }}</p>
+      </div>
+  
+      <!-- Main Image -->
+      <img [src]="blog.image" alt="{{ blog.title }}" class="blog-main-image" />
+  
+      <!-- Description -->
+      <p class="blog-description">
+        {{ blog.descriptiton }}
+      </p>
+  
+      <!-- Extended Info -->
+      <div class="blog-extra" *ngIf="blog.blogInfo?.desc">
+        <p>{{ blog.blogInfo.desc }}</p>
+      </div>
+  
+      <!-- Carousel -->
+      <div class="carousel-container" *ngIf="blog.blogInfo?.carouselImage?.length">
+        <div class="carousel-item" *ngFor="let cImage of blog.blogInfo.carouselImage">
+          <img [src]="cImage" alt="Carousel image" />
+        </div>
+      </div>
+    </div>
+  
+    <!-- Right: Related Posts -->
+    <aside class="blog-detail-sidebar" *ngIf="relatedBlogs.length">
+      <h3>Related Posts</h3>
+      <div class="related-post" *ngFor="let rb of relatedBlogs">
+        <div class="related-post-date">
+          {{ rb.publishedDate | date:'dd/MM/yyyy' }}
+        </div>
+        <h4>{{ rb.title }}</h4>
+        <button [routerLink]="['/blogs', rb.id]">Read More</button>
+      </div>
+    </aside>
+  </div>
+  

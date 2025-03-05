@@ -1,19 +1,17 @@
-<div class="auth-container">
-    <div class="auth-box">
-      <h2 class="title">Sign Up</h2>
-  
+<div class="signup-container">
+  <div class="signup-form">
+      <h2>Sign Up</h2>
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-        <label>Username</label>
-        <input type="text" formControlName="username" placeholder="Enter username" />
-  
-        <label>Password</label>
-        <input type="password" formControlName="password" placeholder="Enter password" />
-  
-        <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword" placeholder="Confirm password" />
-  
-        <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+          <label for="username">Username</label>
+          <input id="username" formControlName="username" type="text" placeholder="Enter username">
+
+          <label for="password">Password</label>
+          <input id="password" formControlName="password" type="password" placeholder="Enter password">
+
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirm password">
+
+          <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
       </form>
-    </div>
   </div>
-  
+</div>

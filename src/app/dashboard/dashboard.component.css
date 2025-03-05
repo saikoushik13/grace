@@ -1,87 +1,73 @@
-/* Full Dashboard Layout */
+/* 🔹 Dashboard Container */
 .dashboard-container {
-    display: flex;
-    height: 100vh;
-    background-color: #f5f6fa;
+  display: flex;
+  height: 100vh;
+}
+
+/* 🔹 Main Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* 🔹 Dashboard Grid Layout (4 Sections) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 🔹 Individual Dashboard Cards */
+.dashboard-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Blog Post Styling */
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blog-post {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.blog-post h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.blog-post p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 8px 0;
+}
+
+.blog-post button {
+  background-color: #3b3ad1;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blog-post button:hover {
+  background-color: #2e2bb6;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-grid {
+      grid-template-columns: 1fr;
   }
-  
-  /* Sidebar */
-  app-sidebar {
-    width: 260px;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Main Content */
-  .content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    overflow-y: auto;
-  }
-  
-  /* Topbar */
-  app-topbar {
-    width: 100%;
-    height: 60px;
-    background-color: #e8eaf6;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Dashboard Content */
-  .dashboard-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  /* Ensure Analysis and My Daily Tasks are equal width */
-  .dashboard-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Each takes 50% width */
-    gap: 20px;
-    align-items: start;
-  }
-  
-  /* Pie Chart Section */
-  .daily-tasks-container {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Shipment Statistics */
-  .shipment-stats-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    padding: 10px 0;
-  }
-  
-  /* View All Link */
-  .shipment-stats-header a {
-    text-decoration: none;
-    color: #1565c0;
-    font-weight: bold;
-  }
-  
-  .shipment-stats-header a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 1024px) {
-    .dashboard-section {
-      grid-template-columns: 1fr; /* Stack on smaller screens */
-    }
-  }
-  
+}

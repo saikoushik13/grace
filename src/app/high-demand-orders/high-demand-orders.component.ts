@@ -21,6 +21,12 @@ export class HighDemandOrdersComponent implements OnInit {
   constructor(private tableService: TableService) {}
 
   ngOnInit(): void {
+
+    this.tableData = [
+      { "customentName": "John Doe", "product": "Milk", "supplier": "Dairyland", "dateOfEntry": "2025-02-24", "quantity": 50, "price": 2000, "sellingPrice": 2500, "cashier": "Brian O'Conner", "status": "Completed" },
+      { "customentName": "Jane Smith", "product": "Rice", "supplier": "ABC Traders", "dateOfEntry": "2025-02-26", "quantity": 80, "price": 5000, "sellingPrice": 6000, "cashier": "Roman Pearce", "status": "Pending" },
+      { "customentName": "Mia Toretto", "product": "Butter", "supplier": "Amul", "dateOfEntry": "2025-02-28", "quantity": 30, "price": 1500, "sellingPrice": 1800, "cashier": "Letty Ortiz", "status": "In-Transit" }
+    ];
     this.tableService.getTableData('/assets/highdemand.json').subscribe({
       next: (data) => {
         this.tableData = data;

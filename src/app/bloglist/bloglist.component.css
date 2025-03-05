@@ -1,0 +1,121 @@
+.blog-list-container {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Main area for blog cards */
+  .blog-list-main {
+    flex: 3;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .blog-list-main h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  /* Grid of cards */
+  .blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  
+  .blog-card {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .blog-card-content {
+    padding: 1rem;
+  }
+  
+  .blog-date {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-card-content h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .blog-card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-card-content button {
+    padding: 0.5rem 1rem;
+    background-color: #6e6bdc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .blog-card-content button:hover {
+    background-color: #5b58b6;
+  }
+  
+  /* Sidebar */
+  .blog-list-sidebar {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .blog-list-sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .sidebar-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+    font-weight: bold;
+  }
+  
+  .year-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .year-list li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: #6e6bdc;
+  }
+  
+  .year-list li:hover {
+    text-decoration: underline;
+  }
+  
+  .year-list li.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

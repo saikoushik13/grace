@@ -17,7 +17,7 @@ export class SignUpComponent {
   constructor(private fb: FormBuilder, private router: Router) {
     this.signUpForm = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
     }, { validators: this.passwordsMatch });
   }

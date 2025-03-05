@@ -1,0 +1,67 @@
+{
+    "blogs": [
+      {
+        "id": "001",
+        "title": "Different Types of Consumer Goods",
+        "image": "assets/image1.jpg",
+        "type": "Food",
+        "descriptiton": "Convenience goods are those that are sold regularly...",
+        "publishedDate": "2025-01-12T00:00:00",
+        "blogInfo": {
+          "carouselImage": [
+            "assets/image1.jpg",
+            "assets/image2.jpg"
+          ],
+          "postBy": "Roman Pearce, Marketing Manager",
+          "desc": "Full write-up about consumer goods in detail..."
+        }
+      },
+      {
+        "id": "002",
+        "title": "Food Grocery Logistics – Frequency of Shoppers",
+        "image": "assets/image1.jpg",
+        "type": "Food",
+        "descriptiton": "Most Americans go grocery shopping at least once...",
+        "publishedDate": "2025-02-21T00:00:00",
+        "blogInfo": {
+          "carouselImage": [
+            "assets/image1.jpg",
+            "assets/image2.jpg"
+          ],
+          "postBy": "Sarah Connor, Logistics Expert",
+          "desc": "Detailed discussion about frequency of grocery shoppers..."
+        }
+      },
+      {
+        "id": "003",
+        "title": "Inventory Turnover Ratios",
+        "image": "assets/image2.jpg",
+        "type": "Logistics",
+        "descriptiton": "The concepts that produce or impact fill rates...",
+        "publishedDate": "2025-04-11T00:00:00",
+        "blogInfo": {
+          "carouselImage": [
+            "assets/image1.jpg"
+          ],
+          "postBy": "Michael Ross, Supply Chain Specialist",
+          "desc": "A deep dive into how to calculate and interpret inventory turnover..."
+        }
+      },
+      {
+        "id": "004",
+        "title": "Ecommerce Platforms",
+        "image": "assets/image3.jpg",
+        "type": "Logistics",
+        "descriptiton": "An overview of the main categories of consumer goods...",
+        "publishedDate": "2025-12-19T00:00:00",
+        "blogInfo": {
+          "carouselImage": [
+            "assets/image1.jpg"
+          ],
+          "postBy": "Alice Johnson, Ecommerce Analyst",
+          "desc": "Full detail on ecommerce platforms for groceries..."
+        }
+      }
+    ]
+  }
+  
